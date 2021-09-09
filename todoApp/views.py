@@ -6,6 +6,7 @@ from .forms import *
 
 # Create your views here.
 
+#Saves form upon refresh
 def index(request):
     tasks = Task.objects.all()
     form = TaskForm()
@@ -20,6 +21,7 @@ def index(request):
 
     return render(request, 'tasks/list.html', context)
 
+#updateTask view
 def updateTask(request, pk):
     task = Task.objects.get(id=pk)
     form = TaskForm(instance=task)
@@ -33,6 +35,7 @@ def updateTask(request, pk):
 
     return render(request,'tasks/updateTask.html', context)
 
+#deleteTask view
 def deleteTask(request, pk):
     item = Task.objects.get(id=pk)
     context = {'item': item}

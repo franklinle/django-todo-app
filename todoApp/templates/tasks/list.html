@@ -1,11 +1,13 @@
-<h3>Hello</h3>
+<h3>To Do List</h3>
 
+<!-- Create a task text input -->
 <form method = "POST" action = "/">
     {% csrf_token %}
     {{form.title}}
     <input type = "submit" name = "Create Task">
 </form>
 
+<!-- Updating, Check/Uncheck, Deleting Tasks -->
 {% for task in tasks %}
 <div>
     <a href = "{% url 'updateTask' task.id %}" >Update</a>
