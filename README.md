@@ -1,1 +1,1 @@
-# schoolProject
+# Simple Django To-do web application
