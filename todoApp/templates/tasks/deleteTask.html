@@ -1,8 +1,59 @@
-<p>Are you sure you want to delete "{{item}}"?</p>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
 
-<a href = "{% url 'list' %}">Cancel</a>
+<style>
+  body {
+    background-color: #524b4b;
+  }
+  .center-column {
+    width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: rgb(29, 27, 27);
+    border-radius: 10px;
+    box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+  }
 
-<form method = "POST" action = "">
-    {% csrf_token %}
-    <input type = "Submit" name = "Confirm">
-</form>
+  .p {
+    color: white;
+    margin: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .item-row {
+    background-color: transparent;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .btn-outline-danger {
+    margin-top: 10px;
+    margin-left: 147px;
+  }
+  .btn-outline-warning {
+    margin-top: 10px;
+    margin-left: 147px;
+    display: inline;
+  }
+</style>
+<div class="center-column">
+  <div class="p">Are you sure you want to delete "{{item}}"?</div>
+
+  <div class="item-row">
+    <a href="{% url 'list' %}" class="btn btn-sm btn-outline-danger">Cancel</a>
+
+    <form method="POST" action="">
+      {% csrf_token %}
+      <input
+        class="btn btn-sm btn-outline-warning"
+        type="Submit"
+        name="Confirm"
+      />
+    </form>
+  </div>
+</div>
